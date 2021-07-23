@@ -1,37 +1,25 @@
-<div class="container">
-  <h1>Indian PIN Code Search</h1>
-  <div class="col-md-6">
-    <form>
-      <div class="form-group">
-        <label for="postalcode">Pin Code</label>
-        <input type="number" id="postalcode" class="form-control" name="postalcode" value="Doe"/>
-      </div>
-      <button class="btn btn-success btn-block" (click)="continueBtn()" type="button">
-        <span *ngIf="submit" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-        Submit
-      </button>
-    </form>
+<h1>Indian PIN Code Search</h1>
+<form>
+  <label for="postalcode">Pincode:</label><br/>
+  <input type="number" id="postalcode" autocomplete="off" name="postalcode" value="Doe"/><br/><br/>
+  <input type="submit" (click)="continue()" value="Submit"/>
+</form>
 
-    <br/>
+<br/>
 
-    <table class="table table-responsive">
-      <thead class="thead-light">
-      <tr>
-        <th>Name</th>
-        <th>BranchType</th>
-        <th>District</th>
-        <th>State</th>
-        <th>Region</th>
-      </tr>
-      </thead>
-      <tr *ngFor="let post of posts; let i = index">
-        <td>{{post.Name}}</td>
-        <td>{{post.BranchType}}</td>
-        <td>{{post.District}}</td>
-        <td>{{post.State}}</td>
-        <td>{{post.Region}}</td>
-      </tr>
-    </table>
-    <div class="col-md-6"></div>
-  </div>
-</div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>BranchType</th>
+    <th>District</th>
+    <th>State</th>
+    <th>Region</th>
+  </tr>
+  <tr *ngFor="let post of posts; let i = index">
+    <td>{{post.Name}}</td>
+    <td>{{post.BranchType}}</td>
+    <td>{{post.District}}</td>
+    <td>{{post.State}}</td>
+    <td>{{post.Region}}</td>
+  </tr>
+</table>
