@@ -1,25 +1,27 @@
-<h1>Indian PIN Code Search</h1>
-<form>
-  <label for="postalcode">Pincode:</label><br/>
-  <input type="number" id="postalcode" autocomplete="off" name="postalcode" value="Doe"/><br/><br/>
-  <input type="submit" (click)="continue()" value="Submit"/>
-</form>
+<div class="container">
+  <h1>Indian PIN Code Search</h1>
+  <form>
+    <label for="postalcode">Pincode:</label><br/>
+    <input type="number" id="postalcode" autocomplete="off" name="postalcode" value="Doe"/><br/><br/>
+    <input type="submit" (click)="continue()" [ngClass]="{'submitted': !submit, 'loader': !submit}" value="Submit"/> <span [class.loader]=""></span>
+  </form>
 
-<br/>
+  <br/>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>BranchType</th>
-    <th>District</th>
-    <th>State</th>
-    <th>Region</th>
-  </tr>
-  <tr *ngFor="let post of posts; let i = index">
-    <td>{{post.Name}}</td>
-    <td>{{post.BranchType}}</td>
-    <td>{{post.District}}</td>
-    <td>{{post.State}}</td>
-    <td>{{post.Region}}</td>
-  </tr>
-</table>
+  <table id="customers">
+    <tr>
+      <th>Name</th>
+      <th>BranchType</th>
+      <th>District</th>
+      <th>State</th>
+      <th>Region</th>
+    </tr>
+    <tr *ngFor="let post of posts; let i = index">
+      <td>{{post.Name}}</td>
+      <td>{{post.BranchType}}</td>
+      <td>{{post.District}}</td>
+      <td>{{post.State}}</td>
+      <td>{{post.Region}}</td>
+    </tr>
+  </table>
+</div>
